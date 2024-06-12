@@ -1,0 +1,27 @@
+# permissions for end users to view blogs.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: blog-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: operator-blog
+    app.kubernetes.io/part-of: operator-blog
+    app.kubernetes.io/managed-by: kustomize
+  name: blog-viewer-role
+rules:
+- apiGroups:
+  - calderwd.com
+  resources:
+  - blogs
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - calderwd.com
+  resources:
+  - blogs/status
+  verbs:
+  - get

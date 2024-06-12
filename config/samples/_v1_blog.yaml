@@ -1,0 +1,12 @@
+apiVersion: calderwd.com/v1
+kind: Blog
+metadata:
+  labels:
+    app.kubernetes.io/name: blog
+    app.kubernetes.io/instance: blog-sample
+    app.kubernetes.io/part-of: operator-blog
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: operator-blog
+  name: blog-sample
+spec:
+  # TODO(user): Add fields here

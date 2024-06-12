@@ -50,7 +50,7 @@ type BlogReconciler struct {
 // - https://pkg.go.dev/sigs.k8s.io/controller-runtime@v0.14.1/pkg/reconcile
 func (r *BlogReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.Result, error) {
 
-	return operatorhelper.Reconcile(operatorhelper.ReconcileConfig{}, r.Client, ctx, req, &calderwdcomv1.Blog{}, log.FromContext(ctx))
+	return operatorhelper.Reconcile(operatorhelper.ReconcileConfig{}, r.Client, req.NamespacedName, &calderwdcomv1.Blog{}, log.FromContext(ctx))
 }
 
 // SetupWithManager sets up the controller with the Manager.
